@@ -2,13 +2,18 @@
 /*
 Plugin Name:       Pressenza
 Plugin URI:        https://github.com/Pressenza/pressenza-plugin
-Version:           0.1.3
+Version:           0.1.4
 Description:       collection of widgets and setup for pressenza.com
 Author:            Stefano Cecere & Tom Butikofer
 Author URI:        https://github.com/Pressenza
 GitHub Plugin URI: https://github.com/Pressenza/pressenza-plugin
 GitHub Branch:     master
 */
+
+// If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
 
 class MultilanguageHtmlWidget extends WP_Widget {
 
