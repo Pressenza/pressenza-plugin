@@ -1,8 +1,8 @@
 <?php
 /*
 Plugin Name:       Pressenza
-Plugin URI:        http://pressenza.com
-Version:           0.1.2
+Plugin URI:        https://github.com/Pressenza/pressenza-plugin
+Version:           0.1.2.1
 Description:       collection of widgets and setup for pressenza.com
 Author:            Stefano Cecere & Tom Butikofer
 Author URI:        https://github.com/Pressenza
