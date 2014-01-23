@@ -1,12 +1,13 @@
 <?php
 /*
-Plugin Name: Pressenza
-Plugin URI: http://pressenza.com
-Description: collection of widgets and setup for pressenza.com
-Version: 0.1.1
-Author: Stefano Cecere & Tom Butikofer
-Author URI: https://github.com/Pressenza
+Plugin Name:       Pressenza
+Plugin URI:        http://pressenza.com
+Version:           0.1.2
+Description:       collection of widgets and setup for pressenza.com
+Author:            Stefano Cecere & Tom Butikofer
+Author URI:        https://github.com/Pressenza
 GitHub Plugin URI: https://github.com/Pressenza/pressenza-plugin
+GitHub Branch:     master
 */
 
 class MultilanguageHtmlWidget extends WP_Widget {
