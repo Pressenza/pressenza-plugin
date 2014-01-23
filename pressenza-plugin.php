@@ -2,7 +2,7 @@
 /*
 Plugin Name:       Pressenza
 Plugin URI:        https://github.com/Pressenza/pressenza-plugin
-Version:           0.1.5
+Version:           0.1.6
 Description:       collection of widgets and setup for pressenza.com
 Author:            Stefano Cecere & Tom Butikofer
 Author URI:        https://github.com/Pressenza
