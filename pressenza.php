@@ -3,7 +3,7 @@
 Plugin Name: Pressenza
 Plugin URI: http://pressenza.com
 Description: collection of widgets and setup for pressenza.com
-Version: 0.1
+Version: 0.1.1
 Author: Stefano Cecere & Tom Butikofer
 Author URI: https://github.com/Pressenza
 GitHub Plugin URI: https://github.com/Pressenza/pressenza-plugin
@@ -15,9 +15,9 @@ class MultilanguageHtmlWidget extends WP_Widget {
     $widget_ops = array('classname' => 'MultilanguageHtmlWidget', 'description' => 'widget description' );
     $this->WP_Widget('MultilanguageHtmlWidget', 'Pressenza: Multilanguage HTML', $widget_ops);
   }
- 
+
   function form($instance) {
-    $instance = wp_parse_args( (array) $instance, array( 
+    $instance = wp_parse_args( (array) $instance, array(
 		'html_default' => '',
 		'html_it' => '',
 		'html_es' => '',
@@ -33,27 +33,27 @@ class MultilanguageHtmlWidget extends WP_Widget {
 	$html_pt = esc_textarea($instance['html_pt']);
 	$html_hu = esc_textarea($instance['html_hu']);
 ?>
-	<label for="<?php echo $this->get_field_id( 'html_default' ); ?>">HTML (default):</label> 
+	<label for="<?php echo $this->get_field_id( 'html_default' ); ?>">HTML (default):</label>
 	<textarea class="widefat" rows="5" cols="20" id="<?php echo $this->get_field_id( 'html_default' ); ?>" name="<?php echo $this->get_field_name( 'html_default' ); ?>"><?php echo $html_default; ?></textarea>
 
-	<label for="<?php echo $this->get_field_id( 'html_it' ); ?>">HTML (italian):</label> 
+	<label for="<?php echo $this->get_field_id( 'html_it' ); ?>">HTML (italian):</label>
 	<textarea class="widefat" rows="5" cols="20" id="<?php echo $this->get_field_id( 'html_it' ); ?>" name="<?php echo $this->get_field_name( 'html_it' ); ?>"><?php echo $html_it; ?></textarea>
 
-	<label for="<?php echo $this->get_field_id( 'html_es' ); ?>">HTML (espanol):</label> 
+	<label for="<?php echo $this->get_field_id( 'html_es' ); ?>">HTML (espanol):</label>
 	<textarea class="widefat" rows="5" cols="20" id="<?php echo $this->get_field_id( 'html_es' ); ?>" name="<?php echo $this->get_field_name( 'html_es' ); ?>"><?php echo $html_es; ?></textarea>
 
-	<label for="<?php echo $this->get_field_id( 'html_fr' ); ?>">HTML (francais):</label> 
+	<label for="<?php echo $this->get_field_id( 'html_fr' ); ?>">HTML (francais):</label>
 	<textarea class="widefat" rows="5" cols="20" id="<?php echo $this->get_field_id( 'html_fr' ); ?>" name="<?php echo $this->get_field_name( 'html_fr' ); ?>"><?php echo $html_fr; ?></textarea>
 
-	<label for="<?php echo $this->get_field_id( 'html_pt' ); ?>">HTML (portoguese):</label> 
+	<label for="<?php echo $this->get_field_id( 'html_pt' ); ?>">HTML (portoguese):</label>
 	<textarea class="widefat" rows="5" cols="20" id="<?php echo $this->get_field_id( 'html_pt' ); ?>" name="<?php echo $this->get_field_name( 'html_pt' ); ?>"><?php echo $html_pt; ?></textarea>
 
-	<label for="<?php echo $this->get_field_id( 'html_hu' ); ?>">HTML (hungarian):</label> 
+	<label for="<?php echo $this->get_field_id( 'html_hu' ); ?>">HTML (hungarian):</label>
 	<textarea class="widefat" rows="5" cols="20" id="<?php echo $this->get_field_id( 'html_hu' ); ?>" name="<?php echo $this->get_field_name( 'html_hu' ); ?>"><?php echo $html_hu; ?></textarea>
 
 <?php
   }
- 
+
   function update($new_instance, $old_instance) {
     $instance = $old_instance;
     $instance['html_default'] = $new_instance['html_default'];
@@ -65,7 +65,7 @@ class MultilanguageHtmlWidget extends WP_Widget {
 
     return $instance;
   }
- 
+
 	function widget($args, $instance) {
 		extract($args, EXTR_SKIP);
 
@@ -93,7 +93,7 @@ class MultilanguageHtmlWidget extends WP_Widget {
 		}
 
 		echo $html;
- 
+
 		//echo $after_widget;
 	}
 
