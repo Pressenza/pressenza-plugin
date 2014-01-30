@@ -2,12 +2,12 @@
 /*
 Plugin Name:       Pressenza
 Plugin URI:        https://github.com/Pressenza/pressenza-plugin
-Version:           0.1.9.1
+Version:           0.1.9.2
 Description:       collection of widgets and setup for pressenza.com
 Author:            Stefano Cecere & Tom Butikofer
 Author URI:        https://github.com/Pressenza
-GitHub Plugin URI: https://github.com/Pressenza/pressenza-plugin
-GitHub Branch:     master
+//GitHub Plugin URI: https://github.com/Pressenza/pressenza-plugin
+//GitHub Branch:     master
 */
 
 // If this file is called directly, abort.
