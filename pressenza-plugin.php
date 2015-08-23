@@ -29,7 +29,7 @@ class MultilanguageHtmlWidget extends WP_Widget {
 		'html_es' => '',
 		'html_fr' => '',
 		'html_pt' => '',
-		'html_hu' => ''
+		'html_de' => ''
 		)
     );
 	$html_default = esc_textarea($instance['html_default']);
@@ -37,7 +37,7 @@ class MultilanguageHtmlWidget extends WP_Widget {
 	$html_es = esc_textarea($instance['html_es']);
 	$html_fr = esc_textarea($instance['html_fr']);
 	$html_pt = esc_textarea($instance['html_pt']);
-	$html_hu = esc_textarea($instance['html_hu']);
+	$html_de = esc_textarea($instance['html_de']);
 ?>
 	<label for="<?php echo $this->get_field_id( 'html_default' ); ?>">HTML (default):</label>
 	<textarea class="widefat" rows="5" cols="20" id="<?php echo $this->get_field_id( 'html_default' ); ?>" name="<?php echo $this->get_field_name( 'html_default' ); ?>"><?php echo $html_default; ?></textarea>
@@ -54,8 +54,8 @@ class MultilanguageHtmlWidget extends WP_Widget {
 	<label for="<?php echo $this->get_field_id( 'html_pt' ); ?>">HTML (portoguese):</label>
 	<textarea class="widefat" rows="5" cols="20" id="<?php echo $this->get_field_id( 'html_pt' ); ?>" name="<?php echo $this->get_field_name( 'html_pt' ); ?>"><?php echo $html_pt; ?></textarea>
 
-	<label for="<?php echo $this->get_field_id( 'html_hu' ); ?>">HTML (hungarian):</label>
-	<textarea class="widefat" rows="5" cols="20" id="<?php echo $this->get_field_id( 'html_hu' ); ?>" name="<?php echo $this->get_field_name( 'html_hu' ); ?>"><?php echo $html_hu; ?></textarea>
+	<label for="<?php echo $this->get_field_id( 'html_de' ); ?>">HTML (german):</label>
+	<textarea class="widefat" rows="5" cols="20" id="<?php echo $this->get_field_id( 'html_de' ); ?>" name="<?php echo $this->get_field_name( 'html_de' ); ?>"><?php echo $html_de; ?></textarea>
 
 <?php
   }
@@ -67,7 +67,7 @@ class MultilanguageHtmlWidget extends WP_Widget {
     $instance['html_es'] = $new_instance['html_es'];
     $instance['html_fr'] = $new_instance['html_fr'];
     $instance['html_pt'] = $new_instance['html_pt'];
-    $instance['html_hu'] = $new_instance['html_hu'];
+    $instance['html_de'] = $new_instance['html_de'];
 
     return $instance;
   }
@@ -90,8 +90,8 @@ class MultilanguageHtmlWidget extends WP_Widget {
 			case 'pt-pt':
 				$html = $instance['html_pt'];
 			break;
-			case 'hu':
-				$html = $instance['html_hu'];
+			case 'de':
+				$html = $instance['html_de'];
 			break;
 			default:
 				$html = $instance['html_default'];
