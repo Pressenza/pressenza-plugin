@@ -2,7 +2,7 @@
 /*
 Plugin Name:       Pressenza
 Plugin URI:        https://github.com/Pressenza/pressenza-plugin
-Version:           0.1.9.5
+Version:           0.2.0
 Description:       collection of widgets and setup for pressenza.com
 Author:            Stefano Cecere & Tom Butikofer
 Author URI:        https://github.com/Pressenza
@@ -29,7 +29,8 @@ class MultilanguageHtmlWidget extends WP_Widget {
 		'html_es' => '',
 		'html_fr' => '',
 		'html_pt' => '',
-		'html_de' => ''
+		'html_de' => '',
+		'html_el' => ''
 		)
     );
 	$html_default = esc_textarea($instance['html_default']);
@@ -38,6 +39,7 @@ class MultilanguageHtmlWidget extends WP_Widget {
 	$html_fr = esc_textarea($instance['html_fr']);
 	$html_pt = esc_textarea($instance['html_pt']);
 	$html_de = esc_textarea($instance['html_de']);
+	$html_el = esc_textarea($instance['html_el']);
 ?>
 	<label for="<?php echo $this->get_field_id( 'html_default' ); ?>">HTML (default):</label>
 	<textarea class="widefat" rows="5" cols="20" id="<?php echo $this->get_field_id( 'html_default' ); ?>" name="<?php echo $this->get_field_name( 'html_default' ); ?>"><?php echo $html_default; ?></textarea>
@@ -57,6 +59,9 @@ class MultilanguageHtmlWidget extends WP_Widget {
 	<label for="<?php echo $this->get_field_id( 'html_de' ); ?>">HTML (german):</label>
 	<textarea class="widefat" rows="5" cols="20" id="<?php echo $this->get_field_id( 'html_de' ); ?>" name="<?php echo $this->get_field_name( 'html_de' ); ?>"><?php echo $html_de; ?></textarea>
 
+	<label for="<?php echo $this->get_field_id( 'html_el' ); ?>">HTML (Greek):</label>
+	<textarea class="widefat" rows="5" cols="20" id="<?php echo $this->get_field_id( 'html_el' ); ?>" name="<?php echo $this->get_field_name( 'html_el' ); ?>"><?php echo $html_el; ?></textarea>
+
 <?php
   }
 
@@ -68,6 +73,7 @@ class MultilanguageHtmlWidget extends WP_Widget {
     $instance['html_fr'] = $new_instance['html_fr'];
     $instance['html_pt'] = $new_instance['html_pt'];
     $instance['html_de'] = $new_instance['html_de'];
+	$instance['html_el'] = $new_instance['html_el'];
 
     return $instance;
   }
@@ -92,6 +98,9 @@ class MultilanguageHtmlWidget extends WP_Widget {
 			break;
 			case 'de':
 				$html = $instance['html_de'];
+			break;
+			case 'el':
+				$html = $instance['html_el'];
 			break;
 			default:
 				$html = $instance['html_default'];
