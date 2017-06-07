@@ -2,7 +2,7 @@
 /*
 Plugin Name:       Pressenza
 Plugin URI:        https://github.com/Pressenza/pressenza-plugin
-Version:           0.2.1
+Version:           0.2.2
 Description:       collection of widgets and setup for pressenza.com
 Author:            Stefano Cecere & Tom Butikofer
 Author URI:        https://github.com/Pressenza
@@ -21,7 +21,7 @@ class MultilanguageHtmlWidget extends WP_Widget
     function MultilanguageHtmlWidget()
     {
         $widget_ops = array('classname' => 'MultilanguageHtmlWidget', 'description' => 'widget description');
-        $this->WP_Widget('MultilanguageHtmlWidget', 'Pressenza: Multilanguage HTML', $widget_ops);
+        parent::__construct('MultilanguageHtmlWidget', 'Pressenza: Multilanguage HTML', $widget_ops);
     }
 
     function form($instance)
