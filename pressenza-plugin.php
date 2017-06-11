@@ -15,10 +15,12 @@ if (!defined('WPINC')) {
     die;
 }
 
-function pressenza_register_widgets() {
-	register_widget( 'MultilanguageHtmlWidget' );
+function pressenza_register_widgets()
+{
+    register_widget('MultilanguageHtmlWidget');
 }
-add_action( 'widgets_init', 'pressenza_register_widgets' );
+
+add_action('widgets_init', 'pressenza_register_widgets');
 
 class MultilanguageHtmlWidget extends WP_Widget
 {
@@ -39,7 +41,8 @@ class MultilanguageHtmlWidget extends WP_Widget
                 'html_pt' => '',
                 'html_de' => '',
                 'html_el' => '',
-                'html_hu' => ''
+                'html_hu' => '',
+                'html_ca' => ''
             )
         );
         $html_default = esc_textarea($instance['html_default']);
@@ -50,6 +53,7 @@ class MultilanguageHtmlWidget extends WP_Widget
         $html_de = esc_textarea($instance['html_de']);
         $html_el = esc_textarea($instance['html_el']);
         $html_hu = esc_textarea($instance['html_hu']);
+        $html_ca = esc_textarea($instance['html_ca']);
         ?>
         <label for="<?php echo $this->get_field_id('html_default'); ?>">HTML (default):</label>
         <textarea class="widefat" rows="5" cols="20" id="<?php echo $this->get_field_id('html_default'); ?>" name="<?php echo $this->get_field_name('html_default'); ?>"><?php echo $html_default; ?></textarea>
@@ -75,6 +79,9 @@ class MultilanguageHtmlWidget extends WP_Widget
         <label for="<?php echo $this->get_field_id('html_hu'); ?>">HTML (Hungarian):</label>
         <textarea class="widefat" rows="5" cols="20" id="<?php echo $this->get_field_id('html_hu'); ?>" name="<?php echo $this->get_field_name('html_hu'); ?>"><?php echo $html_hu; ?></textarea>
 
+        <label for="<?php echo $this->get_field_id('html_ca'); ?>">HTML (Catalan):</label>
+        <textarea class="widefat" rows="5" cols="20" id="<?php echo $this->get_field_id('html_ca'); ?>" name="<?php echo $this->get_field_name('html_ca'); ?>"><?php echo $html_ca; ?></textarea>
+
         <?php
     }
 
@@ -89,6 +96,7 @@ class MultilanguageHtmlWidget extends WP_Widget
         $instance['html_de'] = $new_instance['html_de'];
         $instance['html_el'] = $new_instance['html_el'];
         $instance['html_hu'] = $new_instance['html_hu'];
+        $instance['html_ca'] = $new_instance['html_ca'];
 
         return $instance;
     }
@@ -121,6 +129,9 @@ class MultilanguageHtmlWidget extends WP_Widget
             case 'hu':
                 $html = $instance['html_hu'];
                 break;
+            case 'ca':
+                $html = $instance['html_ca'];
+                break;
             default:
                 $html = $instance['html_default'];
                 break;
@@ -131,3 +142,5 @@ class MultilanguageHtmlWidget extends WP_Widget
     }
 
 }
+
+add_action('widgets_init', create_function('', 'return register_widget("MultilanguageHtmlWidget");'));
